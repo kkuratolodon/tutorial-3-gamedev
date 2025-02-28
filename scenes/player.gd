@@ -5,9 +5,9 @@ extends CharacterBody2D
 @export var jump_speed = -300
 @export var dash_speed = 500
 
-@onready var _animation := $Sprite2D/AnimationPlayer
-@onready var _col_ceiling := $CollisionShape2D2
-@onready var shapecast_up = $ShapeCast2D
+var z := .0
+var zz := .0
+var zzz := .0
 
 var _is_facing_right := true
 var _can_double_jump := true
@@ -17,9 +17,11 @@ var _is_crouching := false
 var _is_dashing := false
 var _can_dash = true
 
-var z := .0
-var zz := .0
-var zzz := .0
+@onready var _animation := $Sprite2D/AnimationPlayer
+@onready var _col_ceiling := $CollisionShape2D2
+@onready var _shapecast_up = $ShapeCast2D
+
+
 
 
 func _physics_process(delta):
@@ -70,7 +72,7 @@ func _physics_process(delta):
 		_animation.play("fall")
 
 	if Input.is_action_just_pressed("ui_up"):
-		if not _is_crouching or not shapecast_up.is_colliding():
+		if not _is_crouching or not _shapecast_up.is_colliding():
 			_is_crouching = false
 			_col_ceiling.disabled = false
 			_is_crouching = false
@@ -100,7 +102,7 @@ func _physics_process(delta):
 			_is_crouching = true
 			_animation.play("crouch")
 		else:
-			if not shapecast_up.is_colliding():
+			if not _shapecast_up.is_colliding():
 				_col_ceiling.disabled = false
 				_is_crouching = false
 
