@@ -22,8 +22,6 @@ var _can_dash = true
 @onready var _shapecast_up = $ShapeCast2D
 
 
-
-
 func _physics_process(delta):
 	if _is_dashing:
 		var direction = 1
