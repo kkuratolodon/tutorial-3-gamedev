@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxuxnu2ugolq8"]
+
+[ext_resource type="PackedScene" uid="uid://cxlguhxha2pl7" path="res://scenes/Ground.tscn" id="1_v1fdl"]
+[ext_resource type="AudioStream" uid="uid://brru5n8ixbf6p" path="res://assets/Sound/Sketchbook 2024-11-29.ogg" id="2_2g4rm"]
+[ext_resource type="PackedScene" uid="uid://dpgmjn4ut28kn" path="res://scenes/Player2.tscn" id="3_c46pr"]
+[ext_resource type="AudioStream" uid="uid://gwuyyyljrky0" path="res://assets/Sound/Sketchbook 2024-11-30.ogg" id="5_0uioq"]
+[ext_resource type="PackedScene" uid="uid://c5xfuyy6nc37" path="res://scenes/Vase.tscn" id="5_b8bkp"]
+
+[node name="Tutorial5" type="Node2D"]
+
+[node name="Ground" parent="." instance=ExtResource("1_v1fdl")]
+position = Vector2(177, 315)
+
+[node name="Ground2" parent="." instance=ExtResource("1_v1fdl")]
+position = Vector2(529, 315)
+
+[node name="Player2" parent="." groups=["player"] instance=ExtResource("3_c46pr")]
+position = Vector2(17, 198)
+gravity = 500.0
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="Node2D" groups=["position_based_audio"]]
+position = Vector2(0, 2)
+stream = ExtResource("2_2g4rm")
+volume_db = -4.87
+autoplay = true
+max_distance = 1200.0
+
+[node name="BGM2" type="AudioStreamPlayer2D" parent="Node2D" groups=["position_based_audio"]]
+position = Vector2(2117, -1)
+stream = ExtResource("5_0uioq")
+volume_db = -4.87
+autoplay = true
+max_distance = 1200.0
+
+[node name="Vase" parent="." instance=ExtResource("5_b8bkp")]
+position = Vector2(479, 252)
+
+[node name="Vase2" parent="." instance=ExtResource("5_b8bkp")]
+position = Vector2(518, 252)
+
+[node name="Vase3" parent="." instance=ExtResource("5_b8bkp")]
+position = Vector2(557, 252)
+
+[node name="Ground3" parent="." instance=ExtResource("1_v1fdl")]
+position = Vector2(883, 315)
+
+[node name="Vase4" parent="." instance=ExtResource("5_b8bkp")]
+position = Vector2(1092, 250)
+
+[node name="Vase5" parent="." instance=ExtResource("5_b8bkp")]
+position = Vector2(1131, 250)
+
+[node name="Vase6" parent="." instance=ExtResource("5_b8bkp")]
+position = Vector2(1170, 250)
+
+[node name="Ground4" parent="." instance=ExtResource("1_v1fdl")]
+position = Vector2(1236, 315)
+scale = Vector2(-1, 1)
+
+[node name="Ground5" parent="." instance=ExtResource("1_v1fdl")]
+position = Vector2(1588, 315)
+scale = Vector2(-1, 1)
+
+[node name="Ground6" parent="." instance=ExtResource("1_v1fdl")]
+position = Vector2(1942, 315)
+scale = Vector2(-1, 1)
+
+[node name="Vase7" parent="." instance=ExtResource("5_b8bkp")]
+position = Vector2(1764, 250)
+
+[node name="Vase8" parent="." instance=ExtResource("5_b8bkp")]
+position = Vector2(1803, 250)
+
+[node name="Vase9" parent="." instance=ExtResource("5_b8bkp")]
+position = Vector2(1842, 250)
